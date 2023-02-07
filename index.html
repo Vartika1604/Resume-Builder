@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container" id="cv-form">
+    <h4 class="text-center my-3" >Resume</h4>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Personal Information</h3>
+            <div class="form group my-2">
+                <label for="nameField">Your Name</label>
+                <input type="text" class="form-control" id="nameField" placeholder="Enter Here"> <!-- namefield id is used to fetch name from the text -->
+            </div>
+            <div class="form group my-2">
+                <label for="contactField">Contact Number</label>
+                <input type="text" class="form-control" id="contactField" placeholder="Enter Here"> <!-- namefield id is used to fetch name from the text -->
+            </div>
+            <div class="form group my-2">
+                
+                <label for="AddressField">Address</label>
+                <textarea class="form-control" id="addressField" placeholder="Enter Here" rows="4"></textarea>
+            </div>
+            <p>
+                Links:
+
+            </p>
+            <div class="form group my-2">
+                <label for="linkedField">Linkedin</label>
+                <input type="text" class="form-control" id="linkedinField" placeholder="Enter Here"> <!-- namefield id is used to fetch name from the text -->
+            </div>
+            <div class="form group my-2">
+                <label for="githubField">Github Link</label>
+                <input type="text" class="form-control" id="githubField" placeholder="Enter Here"> <!-- namefield id is used to fetch name from the text -->
+            </div>
+            <div class="form group my-2">
+                <label for="projectField">Project Link</label>
+                <input type="text" class="form-control" id="projectField" placeholder="Enter Here"> 
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+            <h3>Professional Details</h3>
+            <div class="form group my-2">
+                
+                <label for="objectiveField">Objective</label>
+                <textarea class="form-control" id="objectiveField" placeholder="Enter Here" ></textarea>
+            </div>
+            <div class="form-group mt-4" id="we">
+                <label for="">Experience</label>
+                <textarea class="form-control weField" placeholder="Enter Here" ></textarea>
+                <!-- new textArea will add here -->
+                <div class="container text-center mt-2" id="weAddButton">
+                    <button class="btn btn-primary btn-sm" onclick="addNewField1()" >Add Field</button>
+                </div>
+            </div>
+            <div class="form group my-2" id="aq">
+                
+                <label for="">Academic Qualification</label>
+                <textarea class="form-control aqlfield" placeholder="Enter Here" ></textarea>
+                <div class="container text-center mt-2" id="qualbutton">
+                    <button class="btn btn-primary btn-sm" onclick="addNewaqField()" >Add Field</button>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="form-group mt-4" id="ce" >
+                <label for="">Certifications</label>
+                <textarea 
+                    class="form-control ceField" 
+                    rows="3">
+                </textarea>
+                <!-- new textArea will add here -->
+                <div class="container" id="ceAddButton">
+                    <button 
+                        style="background-color:  #1b4f72 ; color: white"
+                        class="btn mt-2" 
+                        onclick="addNewField3()">Add
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <button onclick="generateCV()" class="btn btn-primary btn-lg"> Generate Cv</button>
+    </div>
+   </div>
+   <div class="container" id="cv-template">
+    <div class="row">
+        <div class="col-md-4 text-center background py-3">
+            <img class="img-fluid myimage my-2" src="https://ifasport.com/assets/images/default-dp.jpg" alt="">
+            <div class="container">
+                <p id="namet">Vaishnavi Tripathi</p>
+                <p id="contactt">Conatct No.</p>
+                <p id="addresst">Address</p>
+                <hr>
+                <p>
+                    <a id="linkedint" href="Link 1">Linkedin</a><br>
+                    <a id="githubt" href="Link 2">Github</a><br>
+                    <a id="projectt" href="Link 1">Project Link</a><br>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-8 py-3">
+            <div class="card">
+                <div class="card-header background">
+                    <h3>Objective</h3>
+                </div>
+                <div class="card-body">
+                    <p id="objectivet">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, blanditiis fugiat repellendus earum quibusdam alias optio, provident temporibus adipisci quidem aut eligendi perspiciatis, et quam impedit tenetur deleniti delectus molestias architecto porro iusto quod dolorem distinctio assumenda. Expedita, suscipit natus voluptatibus hic quasi non commodi ratione. Consequuntur quidem nisi quo!</p>
+
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Education</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="edT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Certifications</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="cerT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, reprehenderit!</li>
+                        </ul>
+                    </div>
+        </div>
+        <div class="container mt-3 text-center">
+            <div class="container">
+                <button onclick="printCV()" class="btn background">Submit</button>
+            </div>
+        </div>
+    </div>
+   </div>
+   <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
